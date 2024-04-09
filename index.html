@@ -14,10 +14,34 @@
         <div class="top">
             <div class="block">
                 <p>Text Colour picker</p>
-                <input type="form-control">
-
+                <input type="form-control"
+                type="color" id="colorPicker">
             </div>
-        </div>
+            <div class="block">
+                <p>Background</p>
+                <input type="form-control"
+                type="color" id="canvasColor">
+            </div>
+            <div class="block">
+                <p>Ticknesss Slider</p>
+                <input type="range"
+                class="form-control-range"
+                id="lineWidthSlider" min="1"
+                max="100" value="1">
+            </div>
+            <div class="block">
+                <p>Font Size</p>
+                <select class="custom-select"
+                type="select" id="fontSizePicker">
+                    <option value="5">5px</option>
+                    <option value="10">10px</option>
+                    <option value="20">20px</option>
+                    <option value="30">30px</option>
+                    <option value="40">40px</option>
+                    <option value="50">50px</option>
+                </select>
+            </div>
+        </div>  
     </div>
     
     
