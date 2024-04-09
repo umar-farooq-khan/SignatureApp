@@ -1,59 +1,273 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Signature ~ HRS </title>
-
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
-        integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
-    <link rel="stylesheet" href="/styles.css">
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Signature</title>
+    <link
+      rel="icon"
+      href="pen.png"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Delicious+Handrawn&family=Montserrat+Subrayada:wght@400;700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+    />
+  </head>
+  <body>
     <div class="main">
-        <div class="top">
-            <div class="block">
-                <p>Text Colour picker</p>
-                <input type="color" class="form-control"
-                id="colorPicker">
-            </div>
-            <div class="block">
-                <p>Background</p>
-                <input class="form-control"
-                type="color" id="canvasColor">
-            </div>
-            <div class="block">
-                <p>Ticknesss Slider</p>
-                <input type="range"
-                class="form-control-range"
-                id="lineWidthSlider" min="1"
-                max="100" value="1">
-            </div>
-            <div class="block">
-                <p>Font Size</p>
-                <select class="custom-select"
-                type="select" id="fontSizePicker">
-                    <option value="5">5px</option>
-                    <option value="10">10px</option>
-                    <option value="20">20px</option>
-                    <option value="30">30px</option>
-                    <option value="40">40px</option>
-                    <option value="50">50px</option>
-                </select>
-            </div>
-        </div> 
-        
-        <canvas class="canvas" 
-            id="myCanvas" width="800" height="500">
-        </canvas>
-
-        <div class="bottom">
-            <button type="button" class="btn btn-danger" id="clearButton">Clear</button>
-            <button type="button" class="btn btn-success" id="saveButton">Save & Download</button>
-            <button type="button" class="btn btn-warning" id="retrieveButton">Retrived Saved Sigunature</button>
+      <div class="top">
+        <div class="black">
+          <a href="#" class="logo">Signature <span> made </span>Easy</a>
         </div>
-    </div>
-<script src="/scripts.js"></script>
+        <div class="black">
+          <p>Text Color Picker</p>
+          <input type="color" class="form-control" id="colorPicker" />
+        </div>
+        <div class="black">
+          <p id="bck">Background</p>
+          <input type="color" class="form-control" id="background" />
+        </div>
+        <div class="black">
+          <p>Font-Size</p>
+          <select id="FontSize">
+            <option value="10">10px</option>
+            <option value="15">15px</option>
+            <option value="20">20px</option>
+            <option value="30">30px</option>
+            <option value="40">40px</option>
+            <option value="50">50px</option>
+            <option value="60">60px</option>
+          </select>
+        </div>
+        <div class="black">
+          <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="mid">
+        <div class="dayNight">
+          <h3>Does it look Boring?</h3>
+          <div class="dntext">
+            <span class="day">Change it to Dark Mode </span>
+            <span class="night">Change it to Light Mode</span>
+          </div>
 
-</body>
+          <div class="dayNightbtn">
+            <ion-icon name="sunny-outline"></ion-icon>
+            <ion-icon name="moon-outline"></ion-icon>
+          </div>
+        </div>
+        <canvas id="myCanvas" class="canvas" width="800" height="450"></canvas>
+        <div class="right">
+          <h2><span id="text"></span></h2>
+          <div class="animated-picture">
+            <img
+              src="pen.png"
+              alt="Animated Picture"
+            />
+          </div>
+        </div>
+      </div>
+
+      <div class="bottom">
+        <button class="btn btn-danger" type="button" id="clearAll">
+          ClearAll
+        </button>
+        <button class="btn btn-success" type="button" id="saveDownload">
+          Save&Download
+        </button>
+        <button class="btn btn-warning" type="button" id="retrieve">
+          Retrieve Saved Signature
+        </button>
+      </div>
+      <div class="social-icons">
+        <a href="#" id="githubLink" rel="noopener noreferrer"
+          ><i class="fab fa-github"></i
+        ></a>
+        <a href="#" id="linkedinLink" rel="noopener noreferrer"
+          ><i class="fab fa-linkedin"></i
+        ></a>
+        <a href="#" id="twitterLink" rel="noopener noreferrer"
+          ><i class="fab fa-twitter"></i
+        ></a>
+      </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.12/typed.min.js"></script>
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+    ></script>
+    <script>
+      const colorPicker = document.getElementById("colorPicker");
+      const background = document.getElementById("background");
+      const FontSize = document.getElementById("FontSize");
+      const canvas = document.getElementById("myCanvas");
+      const clearAll = document.getElementById("clearAll");
+      const saveDownload = document.getElementById("saveDownload");
+      const retrieve = document.getElementById("retrieve");
+      const ctx = canvas.getContext("2d");
+      const strings = [
+        "Draw()",
+        "Save()",
+        "Download()",
+        "Clear()",
+        "Retrieve()",
+        "Repeat()",
+      ];
+      const textElement = document.getElementById("text");
+
+      function displayWordsLoop(words, index) {
+        const word = words[index];
+        textElement.textContent = word;
+        setTimeout(() => {
+          displayWordsLoop(words, (index + 1) % words.length);
+        }, 800);
+      }
+      displayWordsLoop(strings, 0);
+
+      colorPicker.addEventListener("change", (e) => {
+        ctx.fillStyle = event.target.value;
+        ctx.strokeStyle = event.target.value;
+      });
+      canvas.addEventListener("mousedown", startDrawing);
+      canvas.addEventListener("mousemove", draw);
+      canvas.addEventListener("mouseup", endDrawing);
+  
+     
+      canvas.addEventListener("touchstart", startDrawing);
+      canvas.addEventListener("touchmove", draw);
+      canvas.addEventListener("touchend", endDrawing);
+
+      let isDrawing = false;
+      let lastX = 0;
+      let lastY = 0;
+      function startDrawing(e) {
+        e.preventDefault(); 
+        isDrawing = true;
+        setPosition(e);
+      }
+      function draw(e) {
+        e.preventDefault(); 
+        if (!isDrawing) return;
+  
+        ctx.beginPath();
+        ctx.moveTo(lastX, lastY);
+        setPosition(e);
+        ctx.lineTo(lastX, lastY);
+        ctx.stroke();
+      }
+
+      function endDrawing() {
+        isDrawing = false;
+      }
+  
+        function setPosition(e) {
+        if (e.type.startsWith("mouse")) {
+          lastX = e.offsetX;
+          lastY = e.offsetY;
+        } else if (e.type.startsWith("touch")) {
+          const touch = e.touches[0];
+          const rect = canvas.getBoundingClientRect();
+          const scaleX = canvas.width / rect.width; 
+          const scaleY = canvas.height / rect.height; 
+          lastX = (touch.clientX - rect.left) * scaleX;
+          lastY = (touch.clientY - rect.top) * scaleY;
+        }
+      }
+
+      background.addEventListener("change", (e) => {
+        ctx.fillStyle = e.target.value;
+        ctx.fillRect(0, 0, canvas.width, canvas.height);
+      });
+
+      FontSize.addEventListener("change", (e) => {
+        ctx.lineWidth = e.target.value;
+        console.log(e.target.value);
+      });
+      clearAll.addEventListener("click", (e) => {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+      });
+
+      saveDownload.addEventListener("click", (e) => {
+        const url = canvas.toDataURL();
+        const a = document.createElement("a");
+        a.href = url;
+        a.download = "signature.png";
+        console.log(a.href);
+        localStorage.setItem("canvases", canvas.toDataURL());
+
+        // Programmatically trigger the click event to initiate download
+        a.click();
+
+        // Clean up
+        URL.revokeObjectURL(url);
+      });
+      retrieve.addEventListener("click", (e) => {
+        const data = localStorage.getItem("canvases");
+
+        if (data) {
+          const img = new Image();
+          img.src = data;
+          ctx.drawImage(img, 0, 0);
+        }
+      });
+      let dayNightbtn = document.querySelector(".dayNightbtn");
+      let body = document.querySelector("body");
+      dayNightbtn.addEventListener("click", () => {
+        body.classList.toggle("night");
+      });
+      let gitLink = document.getElementById("githubLink");
+      let lkdLink = document.getElementById("linkedinLink");
+      let twtLink = document.getElementById("twitterLink");
+      gitLink.addEventListener("click", (e) => {
+        e.preventDefault();
+        window.open("https://github.com/MasudAhmed28", "_blank");
+      });
+       gitLink.addEventListener("touchstart", (e) => {
+        e.preventDefault();
+        window.open("https://github.com/MasudAhmed28", "_blank");
+      });
+      lkdLink.addEventListener("click", (e) => {
+        e.preventDefault();
+        window.open(
+          "https://www.linkedin.com/in/masud-ahmed-a70822178",
+          "_blank"
+        );
+      });
+
+      twtLink.addEventListener("click", (e) => {
+        e.preventDefault();
+        window.open("https://twitter.com/Ahmed1Masud", "_blank");
+      });
+    </script>
+    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+    ></script>
+  </body>
 </html>
