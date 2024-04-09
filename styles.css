@@ -1,74 +1,286 @@
-body,
-html {
-  margin: 0;
-  padding: 0;
-  height: 100%;
+.main {
+  margin-top: 10px;
+}
+.top {
+  width: 100%;
+  padding: 10px;
+}
+.black .logo {
+  text-decoration: none;
+  color: black;
+  font-family: "Delicious Handrawn", cursive;
+  cursor: pointer;
+  font-size: 2em;
+}
+.logo span {
+  text-decoration: none;
+  color: red;
+}
+.top .black ul {
+  display: flex;
+  gap: 20px;
+  margin-right: 50px;
+}
+.black p {
+  font-weight: 600;
+}
+.black ul li a {
+  text-decoration: none;
+  color: black;
+  font-weight: 800;
+}
+.black ul li {
+  list-style: none;
+}
+.mid {
+  display: flex;
+}
+.dayNight,
+.right {
+  margin-left: 10px;
+  margin-right: 10px;
+  width: 400px;
+}
+.dayNight {
+  justify-content: center;
+  align-items: center;
+}
+.dayNightbtn {
+  border-radius: 30px;
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #f0f0f0;
+  cursor: pointer;
+  font-size: 2em;
+  background: #f0f0f0;
+  width: 60px;
+  height: 60px;
+  margin-left: 50px;
 }
 
-.main {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 20px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+body.night {
+  background: #333;
+  color: white;
 }
-
+body.night .black ul li a,
+body.night .black .logo,
+body.night .right #text {
+  color: white;
+}
 .canvas {
-  width: 100%;
-  max-width: 600px;
-  border: 2px solid black;
-  margin-bottom: 20px;
+  border: 2px solid rgb(104, 60, 60);
+  margin-left: auto;
+  margin-right: auto;
 }
-
 .top,
 .bottom {
-  width: 100%;
-  max-width: 600px;
   display: flex;
-  justify-content: space-around;
-  flex-wrap: wrap; 
-  margin-bottom: 10px;
+  flex-direction: row;
+  justify-content: space-between;
 }
-
-.block,
-.top button,
-.bottom button {
-  margin: 5px;
-  flex: 1;
-  min-width: 120px;
-}
-
+.black,
 input,
 select,
 button {
-  width: 100%;
-  padding: 10px;
-  box-sizing: border-box;
+  width: 80%;
+}
+.black {
+  margin: 10px;
+}
+button {
+  margin: 10px;
+}
+.bottom {
+  width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.dayNightbtn ion-icon:nth-child(1) {
+  display: none;
+}
+body.night .dayNightbtn ion-icon:nth-child(1) {
+  display: block;
+  color: black;
+}
+body.night .dayNightbtn ion-icon:nth-child(2) {
+  display: none;
 }
 
+.dntext span:nth-child(2) {
+  display: none;
+}
+body.night .dntext span:nth-child(2) {
+  display: block;
+}
+body.night .dntext span:nth-child(1) {
+  display: none;
+}
+.dayNight {
+  margin-top: 50px;
+  text-align: center;
+}
+body.night .dayNightbtn {
+  background: #444444;
+}
+.dayNightbtn {
+  margin-top: 20px;
+  margin-left: 130px;
+}
+.right h2 {
+  font-size: 3em;
+  color: #333;
+  transition: 0.5s;
+  text-align: center;
+  margin-top: 50px;
+}
+body.night .canvas {
+  background: black;
+}
 
-@media (max-width: 480px) {
-  .main {
-    width: 90%; 
-    padding: 10px; 
+#text {
+  font-family: "Delicious Handrawn", cursive;
+}
+
+.animated-picture {
+  position: relative;
+  width: 300px; /* Adjust width as needed */
+  height: 200px; /* Adjust height as needed */
+}
+
+.animated-picture img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  animation: shake 1s ease-in-out infinite; /* Adjust animation duration and timing function */
+}
+
+@keyframes shake {
+  0% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(5px);
+  }
+  50% {
+    transform: translateX(-5px);
+  }
+  75% {
+    transform: translateX(5px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+.social-icons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 10px;
+}
+
+.social-icons a {
+  margin-right: 10px;
+  color: #000000;
+  font-size: 24px;
+}
+.social-icons a:hover {
+  color: #040709;
+}
+body.night .social-icons a {
+  color: #f0f0f0;
+}
+@media screen and (max-width: 576px) {
+  .top {
+    flex-direction: column;
+    align-items: center;
+  }
+  .black .logo {
+    position: absolute;
+    top: 0;
+    margin-left: 50px;
+    margin-bottom: 100px;
   }
 
-  .canvas {
-    margin-bottom: 15px; 
+  .black {
+    display: flex;
+    margin-bottom: 10px;
+  }
+  #background {
+    margin-top: -20px;
+  }
+  .black p {
+    margin-right: 10px;
+    margin-left: -30px;
+    font-size: 0.8rem;
   }
 
-  .top,
+  .mid {
+    margin-top: -100px;
+    display: flex;
+    flex-direction: column;
+  }
   .bottom {
-    flex-direction: column; 
+    display: flex;
+    flex-direction: column;
+    width: 400px;
+  }
+  .bottom button {
+    width: 350px;
+  }
+  .canvas {
+    width: 400px;
+  }
+  .right {
+    width: 390px;
+  }
+  .dayNightbtn {
+    margin-left: 170px;
+    margin-bottom: 5px;
+  }
+  .right {
+    height: 100px;
+    margin-top: -30px;
+  }
+  .mid h3 {
+    font-size: 0.8rem;
+    margin-right: 20px;
+  }
+  #text {
+    font-size: 0.7em;
+    margin-right: 5px;
+  }
+  #bck {
+    margin-top: -20px;
+  }
+  .black select {
+    height: 24px;
+    margin-left: 20px;
+    margin-top: -10px;
+  }
+  .right .animated-picture img {
+    display: none;
+  }
+  .dayNightbtn {
+    margin-bottom: 20px;
+    height: 30px;
+    width: 30px;
+  }
+  .black ul li a {
+    display: none;
   }
 
-  .block,
-  .top button,
-  .bottom button {
-    margin: 5px 0; 
+  body {
+    overflow-x: hidden;
+  }
+  .dntext {
+    margin-right: 9px;
+  }
+  .social-icons a {
+    font-size: 20px;
+  }
+  .animated-picture {
+    display: none;
   }
 }
