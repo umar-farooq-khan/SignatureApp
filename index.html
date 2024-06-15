@@ -47,10 +47,8 @@
 <body style="padding:30px; margin-top:20px">
   <h5 id="showmsg">Here's the secret.</h5>
   <h5 id="showmsg1">Today is Eid.<br> Eid Mubarak!!!</h5>
-  
-    <div>
       <h3>NDA</h3>
-      <ol>
+      <ol id="list">
     <li>This Non-Disclosure Agreement ("Agreement") is entered into as of 16th June 2024, by and between <b>Umar Farooq Khan</b> and <b>Richard Shattock.</b>
 </li>
         <li>Parties Involved: The parties to this Agreement are Umar and Richard.
@@ -85,8 +83,12 @@
   </div>
 
   <script>
+
     const showmsg = document.getElementById("showmsg");
     const showmsg1 = document.getElementById("showmsg1");
+    showmsg.style.visibility = 'hidden';
+    showmsg1.style.visibility = 'hidden';
+
     const canvas = document.getElementById("myCanvas");
     const maindiv = document.getElementById("maindiv");
     const bottomButtons = document.querySelector(".bottom");
@@ -94,13 +96,13 @@
     function agreed() {
 const canvas = document.getElementById("myCanvas");
         canvas.style.display = 'none';
-      const maindiv = document.getElementById("maindiv");
-        maindiv.style.display = 'none';
+      const list = document.getElementById("list");
+        list.style.display = 'none';
 
-    showmsg = document.getElementById("sohwmsg");
     showmsg.style.visibility = 'visible';
-        showmsg1 = document.getElementById("sohwmsg1");
     showmsg1.style.visibility = 'visible';
+
+
     }
 
     const ctx = canvas.getContext("2d");
