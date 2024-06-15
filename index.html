@@ -4,11 +4,14 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Signature</title>
-    <link rel="icon" href="pen.png" />
+    <link
+      rel="icon"
+      href="pen.png"
+    />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Delicious+Handrawn&family=Montserrat+Subrayada:wght@400;700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Delicious+Handrawn&family=Montserrat+Subrayada:wght@400;700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
       rel="stylesheet"
     />
     <link
@@ -17,118 +20,103 @@
       integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
       crossorigin="anonymous"
     />
+    <link rel="stylesheet" href="styles.css" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
     />
-    <style>
-      body {
-        font-family: 'Poppins', sans-serif;
-        display: flex;
-        align-items: center;
-        height: 100vh;
-<<<<<<< HEAD
-
-=======
->>>>>>> ffdd53deae510faaab461594fcbb70ca346428af
-        margin: 0;
-        background-color: #f5f5f5;
-        flex-direction: column;
-      }
-
-      .main {
-        text-align: center;
-<<<<<<< HEAD
-        max-width: 801px;
-=======
-        max-width: 800px;
->>>>>>> ffdd53deae510faaab461594fcbb70ca346428af
-        width: 100%;
-      }
-
-      ol {
-        text-align: left;
-        margin: 0 auto 20px auto;
-        padding: 0 20px;
-      }
-
-      canvas {
-        display: block;
-        margin: 0 auto;
-        border: 1px solid #000;
-        background: #fff;
-      }
-
-      .bottom {
-        margin-top: 20px;
-      }
-    </style>
   </head>
-  <body style="padding:30px; margin-top:20px">
-    <h5 id="sohwmsg">Here's the secret. </h5>
-    <h5 id="sohwmsg1">Today is Eid.<br> Eid Mubarak!!!</h5>
-
-
-    <div class="main" id="maindiv">
-        <div>
-                  <h3>NDA</h3>
-
-              <ol>
-        <li>This Non-Disclosure Agreement ("Agreement") is entered into as of 16th June 2024, by and between <b>Umar Farooq Khan</b> and <b>Richard Shattock.</b>
-</li>
-        <li>Parties Involved: The parties to this Agreement are Umar and Richard.
-</li>
-        <li>Definition of Confidential Information: "Confidential Information" means all information regarding the invention disclosed by Disclosing Party to Receiving Party.
-</li>
-        <li>Purpose of Disclosure: The Confidential Information will be disclosed for the purpose of sharing the invention.
-</li>
-        <li>Obligations of the Receiving Party: The Receiving Party agrees to hold and maintain the Confidential Information in strictest confidence for the sole and exclusive benefit of the Disclosing Party.
-</li>
-        <li>Duration of Confidentiality: The obligations of this Agreement shall be effective as of the date first written above and shall continue for a period of [Number] years.
-</li>
-        <li>Exclusions from Confidentiality: Confidential Information does not include information which (a) is in the public domain at the time of disclosure, (b) becomes part of the public domain through no fault of the Receiving Party, (c) is disclosed with the prior written approval of the Disclosing Party, or (d) is disclosed pursuant to the order or requirement of a court, administrative agency, or other governmental body.
-</li>
-        <li>Permitted Disclosures: Receiving Party may disclose the Confidential Information to its employees or advisors on a need-to-know basis provided they are bound by confidentiality obligations.
-</li>
-        <li>Return or Destruction of Materials: Upon request by the Disclosing Party, the Receiving Party shall return or destroy all materials containing Confidential Information.
-</li>
-        <li>No License Granted: Nothing in this Agreement is intended to grant any rights to the Receiving Party under
-
-</li>
-      </ol>
+  <body>
+    <div class="main">
+      <div class="top">
+        <div class="black">
+          <a href="#" class="logo">Sign <span> with </span> HRS </a>
         </div>
+        <div class="black">
+          <p>Text Color Picker</p>
+          <input type="color" class="form-control" id="colorPicker" />
+        </div>
+        <div class="black">
+          <p id="bck">Background</p>
+          <input type="color" class="form-control" id="background" />
+        </div>
+        <div class="black">
+          <p>Font-Size</p>
+          <select id="FontSize">
+            <option value="10">10px</option>
+            <option value="15">15px</option>
+            <option value="20">20px</option>
+            <option value="30">30px</option>
+            <option value="40">40px</option>
+            <option value="50">50px</option>
+            <option value="60">60px</option>
+          </select>
+        </div>
+        <div class="black">
+          <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="mid">
+        <div class="dayNight">
+          <h3>Does it look Boring?</h3>
+          <div class="dntext">
+            <span class="day">Change it to Dark Mode </span>
+            <span class="night">Change it to Light Mode</span>
+          </div>
 
-      <canvas id="myCanvas" class="canvas" width="800" height="450"></canvas>
+          <div class="dayNightbtn">
+            <ion-icon name="sunny-outline"></ion-icon>
+            <ion-icon name="moon-outline"></ion-icon>
+          </div>
+        </div>
+        <canvas id="myCanvas" class="canvas" width="800" height="450"></canvas>
+        <div class="right">
+          <h2><span id="text"></span></h2>
+          <div class="animated-picture">
+            <img
+              src="pen.png"
+              alt="Animated Picture"
+            />
+          </div>
+        </div>
+      </div>
+
       <div class="bottom">
         <button class="btn btn-danger" type="button" id="clearAll">
-          Clear All
+          ClearAll
         </button>
-        <button onclick="agreed()" class="btn btn-success" type="button">
-          I Accept & Continue
+        <button class="btn btn-success" type="button" id="saveDownload">
+          Save&Download
         </button>
-
+        <button class="btn btn-warning" type="button" id="retrieve">
+          Retrieve Saved Signature
+        </button>
+      </div>
+      <div class="social-icons">
+        <a href="#" id="githubLink" rel="noopener noreferrer"
+          ><i class="fab fa-github"></i
+        ></a>
+        <a href="#" id="linkedinLink" rel="noopener noreferrer"
+          ><i class="fab fa-linkedin"></i
+        ></a>
+        <a href="#" id="twitterLink" rel="noopener noreferrer"
+          ><i class="fab fa-twitter"></i
+        ></a>
       </div>
     </div>
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.12/typed.min.js"></script>
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+    ></script>
     <script>
-   showmsg = document.getElementById("sohwmsg");
-      showmsg1 = document.getElementById("sohwmsg1");
-
-        showmsg.style.visibility = 'hidden';
-                showmsg1.style.visibility = 'hidden';
-
-      function agreed()
-      {
-      const canvas = document.getElementById("myCanvas");
-        canvas.style.display = 'none';
-      const maindiv = document.getElementById("maindiv");
-        maindiv.style.display = 'none';
-
-    showmsg = document.getElementById("sohwmsg");
-    showmsg.style.visibility = 'visible';
-        showmsg1 = document.getElementById("sohwmsg1");
-    showmsg1.style.visibility = 'visible';
-      }
       const colorPicker = document.getElementById("colorPicker");
       const background = document.getElementById("background");
       const FontSize = document.getElementById("FontSize");
@@ -137,80 +125,149 @@
       const saveDownload = document.getElementById("saveDownload");
       const retrieve = document.getElementById("retrieve");
       const ctx = canvas.getContext("2d");
+      const strings = [
+        "Draw()",
+        "Save()",
+        "Download()",
+        "Clear()",
+        "Retrieve()",
+        "Repeat()",
+      ];
+      const textElement = document.getElementById("text");
+
+      function displayWordsLoop(words, index) {
+        const word = words[index];
+        textElement.textContent = word;
+        setTimeout(() => {
+          displayWordsLoop(words, (index + 1) % words.length);
+        }, 800);
+      }
+      displayWordsLoop(strings, 0);
+
+      colorPicker.addEventListener("change", (e) => {
+        ctx.fillStyle = event.target.value;
+        ctx.strokeStyle = event.target.value;
+      });
+      canvas.addEventListener("mousedown", startDrawing);
+      canvas.addEventListener("mousemove", draw);
+      canvas.addEventListener("mouseup", endDrawing);
+
+
+      canvas.addEventListener("touchstart", startDrawing);
+      canvas.addEventListener("touchmove", draw);
+      canvas.addEventListener("touchend", endDrawing);
 
       let isDrawing = false;
       let lastX = 0;
       let lastY = 0;
-
       function startDrawing(e) {
+        e.preventDefault();
         isDrawing = true;
-        [lastX, lastY] = [e.offsetX, e.offsetY];
+        setPosition(e);
       }
-
       function draw(e) {
+        e.preventDefault();
         if (!isDrawing) return;
+
         ctx.beginPath();
         ctx.moveTo(lastX, lastY);
-        ctx.lineTo(e.offsetX, e.offsetY);
+        setPosition(e);
+        ctx.lineTo(lastX, lastY);
         ctx.stroke();
-        [lastX, lastY] = [e.offsetX, e.offsetY];
       }
 
       function endDrawing() {
         isDrawing = false;
-        ctx.beginPath();
       }
 
-      function setPosition(e) {
-        const rect = canvas.getBoundingClientRect();
-        const scaleX = canvas.width / rect.width;
-        const scaleY = canvas.height / rect.height;
-
-        lastX = (e.clientX - rect.left) * scaleX;
-        lastY = (e.clientY - rect.top) * scaleY;
+        function setPosition(e) {
+        if (e.type.startsWith("mouse")) {
+          lastX = e.offsetX;
+          lastY = e.offsetY;
+        } else if (e.type.startsWith("touch")) {
+          const touch = e.touches[0];
+          const rect = canvas.getBoundingClientRect();
+          const scaleX = canvas.width / rect.width;
+          const scaleY = canvas.height / rect.height;
+          lastX = (touch.clientX - rect.left) * scaleX;
+          lastY = (touch.clientY - rect.top) * scaleY;
+        }
       }
 
-      canvas.addEventListener("mousedown", startDrawing);
-      canvas.addEventListener("mousemove", draw);
-      canvas.addEventListener("mouseup", endDrawing);
-      canvas.addEventListener("mouseout", endDrawing);
-
-      canvas.addEventListener("touchstart", (e) => {
-        e.preventDefault();
-        startDrawing(e.touches[0]);
-      });
-      canvas.addEventListener("touchmove", (e) => {
-        e.preventDefault();
-        draw(e.touches[0]);
-      });
-      canvas.addEventListener("touchend", (e) => {
-        e.preventDefault();
-        endDrawing();
+      background.addEventListener("change", (e) => {
+        ctx.fillStyle = e.target.value;
+        ctx.fillRect(0, 0, canvas.width, canvas.height);
       });
 
-      clearAll.addEventListener("click", () => {
+      FontSize.addEventListener("change", (e) => {
+        ctx.lineWidth = e.target.value;
+        console.log(e.target.value);
+      });
+      clearAll.addEventListener("click", (e) => {
         ctx.clearRect(0, 0, canvas.width, canvas.height);
       });
 
-      saveDownload.addEventListener("click", () => {
+      saveDownload.addEventListener("click", (e) => {
         const url = canvas.toDataURL();
         const a = document.createElement("a");
         a.href = url;
         a.download = "signature.png";
-        localStorage.setItem("canvases", url);
-        a.click();
-      });
+        console.log(a.href);
+        localStorage.setItem("canvases", canvas.toDataURL());
 
-      retrieve.addEventListener("click", () => {
+        // Programmatically trigger the click event to initiate download
+        a.click();
+
+        // Clean up
+        URL.revokeObjectURL(url);
+      });
+      retrieve.addEventListener("click", (e) => {
         const data = localStorage.getItem("canvases");
+
         if (data) {
           const img = new Image();
           img.src = data;
-          img.onload = () => {
-            ctx.drawImage(img, 0, 0);
-          };
+          ctx.drawImage(img, 0, 0);
         }
       });
+      let dayNightbtn = document.querySelector(".dayNightbtn");
+      let body = document.querySelector("body");
+      dayNightbtn.addEventListener("click", () => {
+        body.classList.toggle("night");
+      });
+      let gitLink = document.getElementById("githubLink");
+      let lkdLink = document.getElementById("linkedinLink");
+      let twtLink = document.getElementById("twitterLink");
+      gitLink.addEventListener("click", (e) => {
+        e.preventDefault();
+        window.open("https://github.com/HrsFlex", "_blank");
+      });
+       gitLink.addEventListener("touchstart", (e) => {
+        e.preventDefault();
+        window.open("https://github.com/HrsFlex", "_blank");
+      });
+      lkdLink.addEventListener("click", (e) => {
+        e.preventDefault();
+        window.open(
+          "https://www.linkedin.com/in/harsh-kumar-b0b879245/",
+          "_blank"
+        );
+      });
+
+      twtLink.addEventListener("click", (e) => {
+        e.preventDefault();
+        window.open("https://twitter.com/HrS_Flex", "_blank");
+      });
     </script>
+    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+    ></script>
   </body>
 </html>
