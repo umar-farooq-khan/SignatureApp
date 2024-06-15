@@ -47,7 +47,7 @@
 <body style="padding:30px; margin-top:20px">
   <h5 id="showmsg">Here's the secret.</h5>
   <h5 id="showmsg1">Today is Eid.<br> Eid Mubarak!!!</h5>
-      <h3>NDA</h3>
+      <h3 id="nda">NDA</h3>
       <ol id="list">
     <li>This Non-Disclosure Agreement ("Agreement") is entered into as of 16th June 2024, by and between <b>Umar Farooq Khan</b> and <b>Richard Shattock.</b>
 </li>
@@ -78,7 +78,7 @@
    </div>
     <div class="bottom">
       <button class="btn btn-danger" type="button" id="clearAll">Clear All</button>
-      <button onclick="agreed()" class="btn btn-success" type="button">I Accept & Continue</button>
+      <button onclick="agreed()" id="agreedbtn" class="btn btn-success" type="button">I Accept & Continue</button>
     </div>
   </div>
 
@@ -86,6 +86,11 @@
 
     const showmsg = document.getElementById("showmsg");
     const showmsg1 = document.getElementById("showmsg1");
+    const nda = document.getElementById("nda");
+
+      const clearbtn = document.getElementById("clearAll");
+    const agreebtn = document.getElementById("agreedbtn");
+
     showmsg.style.visibility = 'hidden';
     showmsg1.style.visibility = 'hidden';
 
@@ -94,6 +99,10 @@
     const bottomButtons = document.querySelector(".bottom");
 
     function agreed() {
+    clearbtn.style.visibility= 'hidden';
+        agreebtn.style.visibility= 'hidden';
+        nda.style.visibility= 'hidden';
+
 const canvas = document.getElementById("myCanvas");
         canvas.style.display = 'none';
       const list = document.getElementById("list");
