@@ -45,13 +45,12 @@
   </style>
 </head>
 <body style="padding:30px; margin-top:20px">
-  <h5 id="showmsg">Here's the secret.</h5>
-  <h5 id="showmsg1">Today is Eid.<br> Eid Mubarak!!!</h5>
+<div id="wholenda">
       <h3 id="nda">NDA</h3>
       <ol id="list">
-    <li>This Non-Disclosure Agreement ("Agreement") is entered into as of 16th June 2024, by and between <b>Umar Farooq Khan</b> and <b>Richard Shattock.</b>
+    <li>This Non-Disclosure Agreement ("Agreement") is entered into as of <span id="date"> </span> by and between <b> <%= fname %> </b> and <b>Richard Shattock.</b> The address of <%= fname %> is <b><%= address %></b>
 </li>
-        <li>Parties Involved: The parties to this Agreement are Umar and Richard.
+        <li>Parties Involved: The parties to this Agreement are <b> <%= fname %> </b> and Richard.
 </li>
         <li>Definition of Confidential Information: "Confidential Information" means all information regarding the invention disclosed by Disclosing Party to Receiving Party.
 </li>
@@ -72,7 +71,7 @@
 </li>        <!-- Rest of your agreement details -->
       </ol>
     </div>
-
+</div>
    <div>
      <canvas id="myCanvas" class="canvas"></canvas>
    </div>
@@ -83,38 +82,63 @@
   </div>
 
   <script>
+function formatDate(date) {
+  const options = { day: 'numeric', month: 'long', year: 'numeric' };
+  return date.toLocaleDateString('en-US', options);
+}
+     date = new Date();
+const formattedDate = formatDate(date);
 
-    const showmsg = document.getElementById("showmsg");
-    const showmsg1 = document.getElementById("showmsg1");
+document.getElementById('date').innerText = date
+
     const nda = document.getElementById("nda");
 
       const clearbtn = document.getElementById("clearAll");
     const agreebtn = document.getElementById("agreedbtn");
 
-    showmsg.style.visibility = 'hidden';
-    showmsg1.style.visibility = 'hidden';
 
-    const canvas = document.getElementById("myCanvas");
+     canvas = document.getElementById("myCanvas");
     const maindiv = document.getElementById("maindiv");
     const bottomButtons = document.querySelector(".bottom");
 
     function agreed() {
-    clearbtn.style.visibility= 'hidden';
-        agreebtn.style.visibility= 'hidden';
-        nda.style.visibility= 'hidden';
+ canvas = document.getElementById("myCanvas");
+  ctx = canvas.getContext('2d');
+  ctx.fillStyle = 'white';
+  const imageBase64 = canvas.toDataURL('image/png');
 
-const canvas = document.getElementById("myCanvas");
-        canvas.style.display = 'none';
-      const list = document.getElementById("list");
-        list.style.display = 'none';
-
-    showmsg.style.visibility = 'visible';
-    showmsg1.style.visibility = 'visible';
-
-
-    }
-
-    const ctx = canvas.getContext("2d");
+  //const link = document.createElement('a');
+   //link.download = 'signature_invitee.png';
+   //link.href = canvas.toDataURL();
+            //link.click();
+        //canvas.style.display = 'none';
+      // download image,
+      //save image to db
+     const htmlContent = document.getElementById('wholenda').innerHTML; // Assuming you have a div with id 'contentToSend'
+      const payload = {
+      image : imageBase64,
+      html : htmlContent
+      };
+      fetch('http://192.168.1.103:8000/createndapdf', {
+      method: 'POST',
+      headers : {
+        'Content-Type': 'application/json' // Ensure the server expects JSON data
+      },
+        body: JSON.stringify(payload)
+      })
+  .then(response => response.json())
+    .then(data => {
+      console.log('Success:', data);
+      alert('Signature sent successfully!');
+      // Hide the canvas after sending the image
+      canvas.style.display = 'none';
+    })
+    .catch((error) => {
+      console.error('Error:', error);
+      alert('Failed to send signature.');
+    });
+}
+     ctx = canvas.getContext("2d");
     let isDrawing = false;
     let lastX = 0;
     let lastY = 0;
